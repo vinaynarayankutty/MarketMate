@@ -103,8 +103,8 @@ function App(): React.JSX.Element {
             testID="expand-arrow"
             source={
               isExpanded
-                ? require('./assets/upArrow.png')
-                : require('./assets/downArrow.png')
+                ? require('./assets/downArrow.png')
+                : require('./assets/upArrow.png')
             }
             style={styles.arrow}
           />
