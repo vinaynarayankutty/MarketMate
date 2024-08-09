@@ -4,8 +4,10 @@ import styles from './styles';
 
 const Header: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Upstox Holding</Text>
+    <View style={styles.container} testID="header-container">
+      <Text style={styles.heading} testID="header-text">
+        Upstox Holding
+      </Text>
     </View>
   );
 };

@@ -44,9 +44,11 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     fetchData();
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       BootSplash.hide();
     }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const fetchData = async () => {
@@ -70,6 +72,7 @@ function App(): React.JSX.Element {
   const renderStockData = () => {
     return (
       <FlatList
+        testID="stock-list"
         data={stockHoldings}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({item, index}) => (
@@ -87,12 +90,17 @@ function App(): React.JSX.Element {
   const renderPortfolioSummary = () => {
     return (
       <View
+        testID="portfolio-summary"
         style={[
           styles.summaryContainer,
           {height: isExpanded ? RPH(22) : RPH(4)},
         ]}>
-        <TouchableOpacity style={styles.btnContainer} onPress={handleBtnPress}>
+        <TouchableOpacity
+          testID="expand-button"
+          style={styles.btnContainer}
+          onPress={handleBtnPress}>
           <Image
+            testID="expand-arrow"
             source={
               isExpanded
                 ? require('./assets/upArrow.png')
@@ -105,26 +113,34 @@ function App(): React.JSX.Element {
         {isExpanded && (
           <>
             <View style={styles.rowContainer}>
-              <Text style={styles.titleText}>Current Value:</Text>
-              <Text style={styles.valueText}>
+              <Text testID="current-value-label" style={styles.titleText}>
+                Current Value:
+              </Text>
+              <Text testID="current-value" style={styles.valueText}>
                 ₹{totalCurrentValue.toFixed(2)}
               </Text>
             </View>
             <View style={styles.rowContainer}>
-              <Text style={styles.titleText}>Total Investment:</Text>
-              <Text style={styles.valueText}>
+              <Text testID="total-investment-label" style={styles.titleText}>
+                Total Investment:
+              </Text>
+              <Text testID="total-investment" style={styles.valueText}>
                 ₹{totalInvestmentValue.toFixed(2)}
               </Text>
             </View>
             <View style={styles.rowContainer}>
-              <Text style={styles.titleText}>Today's Profit & Loss:</Text>
-              <Text style={styles.valueText}>
+              <Text testID="todays-pl-label" style={styles.titleText}>
+                Today's Profit & Loss:
+              </Text>
+              <Text testID="todays-pl" style={styles.valueText}>
                 ₹{todaysProfitLoss.toFixed(2)}
               </Text>
             </View>
             <View style={styles.plContainer}>
-              <Text style={styles.titleText}>Profit & Loss:</Text>
-              <Text style={styles.valueText}>
+              <Text testID="total-pl-label" style={styles.titleText}>
+                Profit & Loss:
+              </Text>
+              <Text testID="total-pl" style={styles.valueText}>
                 ₹{totalProfitLoss.toFixed(2)}
               </Text>
             </View>
@@ -135,9 +151,9 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView testID="app-container" style={styles.container}>
       <Header />
-      <View style={styles.listContainer}>
+      <View testID="list-container" style={styles.listContainer}>
         {renderStockData()}
         {renderPortfolioSummary()}
       </View>

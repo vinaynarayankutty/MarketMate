@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#7D017D",
+      "borderWidth": 1,
+      "height": 66.7,
+      "justifyContent": "center",
+      "paddingHorizontal": 12,
+    }
+  }
+  testID="header-container"
+>
+  <Text
+    style={
+      {
+        "color": "#FFFFFF",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    }
+    testID="header-text"
+  >
+    Upstox Holding
+  </Text>
+</View>
+`;

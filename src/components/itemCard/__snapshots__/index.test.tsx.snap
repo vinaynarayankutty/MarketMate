@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemCard renders correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "borderBottomWidth": 0.5,
+        "paddingVertical": 10,
+      },
+      false,
+    ]
+  }
+  testID="item-card-container"
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#000000",
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }
+      testID="stock-symbol"
+    >
+      MAHABANK
+    </Text>
+    <Text
+      style={
+        {
+          "color": "#000000",
+          "fontSize": 14,
+        }
+      }
+      testID="ltp-text"
+    >
+      LTP: 
+      <Text
+        style={
+          {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        ₹ 
+        38.05
+      </Text>
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#000000",
+          "fontSize": 14,
+        }
+      }
+      testID="quantity-text"
+    >
+      990
+    </Text>
+    <Text
+      style={
+        {
+          "color": "#000000",
+          "fontSize": 14,
+        }
+      }
+      testID="pl-text"
+    >
+      P/L:
+       
+      <Text
+        style={
+          {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        ₹ 
+        100.50
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
